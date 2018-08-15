@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "108348971182",
+    "firebase_url": "https://cidadaodebem-d5029.firebaseio.com",
+    "project_id": "cidadaodebem-d5029",
+    "storage_bucket": "cidadaodebem-d5029.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:108348971182:android:fee998c6ad1d02c4",
+        "android_client_info": {
+          "package_name": "com.cwb.androiddevbr.cidadaodebem"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "108348971182-6cqafk9ntp13bkdtdcvakg3el183sarj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cwb.androiddevbr.cidadaodebem",
+            "certificate_hash": "e8898cc2358dd39ff50534772f33be77b82c9f9d"
+          }
+        },
+        {
+          "client_id": "108348971182-an2764mo4g1rcason78es9raffpufci9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMKrXI2m06B9zKHAEtl0kkxAGMhpx1_z4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "108348971182-an2764mo4g1rcason78es9raffpufci9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

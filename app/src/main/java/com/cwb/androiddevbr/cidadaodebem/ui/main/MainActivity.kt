@@ -1,6 +1,7 @@
 package com.cwb.androiddevbr.cidadaodebem.ui.main
 
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -12,7 +13,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : BaseActivity() {
 
-    override val viewModel: MainViewModel by viewModel()
+    override val viewModel: LoginViewModel by viewModel()
     override val activityLayout = R.layout.activity_main
 
 
@@ -38,6 +39,16 @@ class MainActivity : BaseActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-        return super.onOptionsItemSelected(item)
+        when(item?.itemId){
+            R.id.app_bar_group -> {
+                startActivity(LoginActivity.getIntent(this))
+                return true
+            }
+            R.id.app_bar_create -> {
+                startActivity(LoginActivity.getIntent(this))
+                return true
+            }
+            else -> return super.onOptionsItemSelected(item)
+        }
     }
 }
