@@ -26,7 +26,7 @@ task clean(type: Delete) {
 }
 
 ext{
-    android_support_version = "1.0.0-beta01"
+    android_support_version = "1.0.0-rc01"
     constraint_layout_version = "2.0.0-alpha1"
     lifecycle_version = "2.0.0-beta01"
     koin_version = '1.0.0-beta-2'
