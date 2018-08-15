@@ -4,7 +4,6 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.widget.Toast
 import com.cwb.androiddevbr.cidadaodebem.R
 import com.cwb.androiddevbr.cidadaodebem.ui.base.BaseActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
@@ -28,7 +27,6 @@ class LoginActivity : BaseActivity() {
     private val TAG = "LoginActivity"
 
     private lateinit var gso: GoogleSignInOptions
-
     private lateinit var mGoogleSignInClient: GoogleSignInClient
     private val RC_SIGN_IN = 9001
 
@@ -54,7 +52,7 @@ class LoginActivity : BaseActivity() {
 
     private fun signIn() {
         val signInIntent = mGoogleSignInClient.getSignInIntent()
-            startActivityForResult(signInIntent, RC_SIGN_IN)
+        startActivityForResult(signInIntent, RC_SIGN_IN)
     }
 
     public override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
