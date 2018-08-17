@@ -1,35 +1,41 @@
 package com.cwb.androiddevbr.cidadaodebem.ui.main
 
-
-import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.FrameLayout
+import androidx.appcompat.widget.Toolbar
+import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.cwb.androiddevbr.cidadaodebem.R
-import com.cwb.androiddevbr.cidadaodebem.ui.base.BaseActivity
-import com.google.android.material.bottomappbar.BottomAppBar
+import com.cwb.androiddevbr.cidadaodebem.models.Group
+import com.cwb.androiddevbr.cidadaodebem.ui.base.BaseFragmentActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class MainActivity : BaseActivity() {
 
-    override val viewModel: LoginViewModel by viewModel()
+class MainActivity : BaseFragmentActivity() {
+
+    override val container: FrameLayout
+        get() = fragment_container
+    override val toolbar: Toolbar
+        get() = bar
+
+    override val viewModel: MainViewModel by viewModel()
     override val activityLayout = R.layout.activity_main
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        setSupportActionBar(bar)
         bar.hideOnScroll = true
 
-        teste.setOnClickListener {
-            if(bar.fabAlignmentMode == BottomAppBar.FAB_ALIGNMENT_MODE_CENTER){
-                bar.fabAlignmentMode = BottomAppBar.FAB_ALIGNMENT_MODE_END
-            }else{
-                bar.fabAlignmentMode = BottomAppBar.FAB_ALIGNMENT_MODE_CENTER
-            }
-        }
+
+        viewModel.groupsLiveData.observe(this, Observer {
+            groups_recyclerview.layoutManager = LinearLayoutManager(this)
+            val groups = it.toObjects(Group::class.java)
+            groups_recyclerview.adapter = GroupAdapter(this, groups)
+        })
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

@@ -8,4 +8,27 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+
+    <style name="ClickableCard">
+        <item name="cardCornerRadius">0dp</item>
+        <item name="cardUseCompatPadding">true</item>
+        <item name="android:foreground">?android:attr/selectableItemBackground</item>
+        <item name="cardPreventCornerOverlap">false</item>
+        <item name="contentPadding">0dp</item>
+        <item name="android:clickable">true</item>
+        <item name="android:background">?android:attr/selectableItemBackground</item>
+        <item name="android:focusable">true</item>
+    </style>
+
+    <style name="BoldTextViewWithShadow">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:layout_gravity">start|top</item>
+        <item name="android:fontFamily">sans-serif-black</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">25sp</item>
+        <item name="android:shadowColor">@android:color/black</item>
+        <item name="android:shadowRadius">20</item>
+        <item name="android:shadowDy">1</item>
+        <item name="android:shadowDx">1</item>
+    </style>
 </resources>
