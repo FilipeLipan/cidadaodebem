@@ -5,6 +5,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.FrameLayout
 import androidx.appcompat.widget.Toolbar
+import androidx.navigation.findNavController
 import com.cwb.androiddevbr.cidadaodebem.R
 import com.cwb.androiddevbr.cidadaodebem.ui.base.BaseFragmentActivity
 import kotlinx.android.synthetic.main.activity_main.*
@@ -13,8 +14,6 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : BaseFragmentActivity() {
 
-    override val container: FrameLayout
-        get() = fragment_container
     override val toolbar: Toolbar
         get() = bar
 
@@ -27,7 +26,18 @@ class MainActivity : BaseFragmentActivity() {
         bar.hideOnScroll = true
 
 
+//        teste.setOnClickListener {
+//            if(bar.fabAlignmentMode == BottomAppBar.FAB_ALIGNMENT_MODE_CENTER){
+//                bar.fabAlignmentMode = BottomAppBar.FAB_ALIGNMENT_MODE_END
+//            }else{
+//                bar.fabAlignmentMode = BottomAppBar.FAB_ALIGNMENT_MODE_CENTER
+//            }
+//        }
+
     }
+
+    override fun onSupportNavigateUp()
+            = findNavController(R.id.my_nav_host_fragment).navigateUp()
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         val inflater = menuInflater

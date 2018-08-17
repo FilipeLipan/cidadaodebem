@@ -9,6 +9,12 @@ import com.cwb.androiddevbr.cidadaodebem.models.Group
 import com.cwb.androiddevbr.cidadaodebem.ui.base.BaseFragment
 import com.cwb.androiddevbr.cidadaodebem.ui.main.GroupAdapter
 import kotlinx.android.synthetic.main.activity_main.*
+import android.widget.Toast
+import androidx.navigation.Navigation
+import androidx.navigation.findNavController
+import com.chad.library.adapter.base.BaseQuickAdapter
+
+
 
 class GroupListFragment : BaseFragment() {
 
@@ -40,6 +46,11 @@ class GroupListFragment : BaseFragment() {
     private fun initAdapter(){
         groups_recyclerview.layoutManager = LinearLayoutManager(context!!)
         groups_recyclerview.adapter = groupAdapter
+
+
+        groupAdapter.setOnItemClickListener({ adapter, holderview, position ->
+            holderview.findNavController().navigate(R.id.action_groupListFragment_to_blankFragment)
+        })
         //TODO create loading layout
     }
 }

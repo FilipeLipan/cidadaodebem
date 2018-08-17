@@ -7,7 +7,6 @@ import androidx.fragment.app.FragmentTransaction
 
 abstract class BaseFragmentActivity: BaseActivity(){
 
-    abstract val container: FrameLayout
     abstract val toolbar : Toolbar
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,20 +25,4 @@ abstract class BaseFragmentActivity: BaseActivity(){
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
-    fun replaceFragment(fragment: BaseFragment) {
-        if(supportFragmentManager.findFragmentByTag(fragment.fragmentTag) == null){
-            val ft = fragmentTransaction
-            ft.replace(container.id, fragment, fragment.fragmentTag)
-            ft.commit()
-        }
-    }
-
-    fun replaceAndBackStackFragment(fragment: BaseFragment) {
-        if(supportFragmentManager.findFragmentByTag(fragment.fragmentTag) == null){
-            val ft = fragmentTransaction
-            ft.replace(container.id, fragment, fragment.fragmentTag)
-            ft.addToBackStack(fragment.fragmentTag)
-            ft.commit()
-        }
-    }
 }
