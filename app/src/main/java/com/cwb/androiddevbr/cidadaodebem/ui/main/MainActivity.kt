@@ -5,10 +5,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.FrameLayout
 import androidx.appcompat.widget.Toolbar
-import androidx.lifecycle.Observer
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.cwb.androiddevbr.cidadaodebem.R
-import com.cwb.androiddevbr.cidadaodebem.models.Group
 import com.cwb.androiddevbr.cidadaodebem.ui.base.BaseFragmentActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -29,12 +26,6 @@ class MainActivity : BaseFragmentActivity() {
 
         bar.hideOnScroll = true
 
-
-        viewModel.groupsLiveData.observe(this, Observer {
-            groups_recyclerview.layoutManager = LinearLayoutManager(this)
-            val groups = it.toObjects(Group::class.java)
-            groups_recyclerview.adapter = GroupAdapter(this, groups)
-        })
 
     }
 
