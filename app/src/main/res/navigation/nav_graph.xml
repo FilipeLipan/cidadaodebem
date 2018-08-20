@@ -9,12 +9,12 @@
         android:name="com.cwb.androiddevbr.cidadaodebem.ui.group.GroupListFragment"
         android:label="GroupListFragment" >
         <action
-            android:id="@+id/action_groupListFragment_to_blankFragment"
-            app:destination="@id/blankFragment" />
+            android:id="@+id/action_groupListFragment_to_groupDetailFragment"
+            app:destination="@id/groupDetailFragment" />
     </fragment>
     <fragment
-        android:id="@+id/blankFragment"
-        android:name="com.cwb.androiddevbr.cidadaodebem.BlankFragment"
-        android:label="fragment_blank"
-        tools:layout="@layout/fragment_blank" />
+        android:id="@+id/groupDetailFragment"
+        android:name="com.cwb.androiddevbr.cidadaodebem.ui.group.detail.GroupDetailFragment"
+        android:label="GroupDetailFragment" />
+
 </navigation>

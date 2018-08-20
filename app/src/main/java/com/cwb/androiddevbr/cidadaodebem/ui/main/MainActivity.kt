@@ -3,11 +3,11 @@ package com.cwb.androiddevbr.cidadaodebem.ui.main
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.FrameLayout
 import androidx.appcompat.widget.Toolbar
 import androidx.navigation.findNavController
 import com.cwb.androiddevbr.cidadaodebem.R
 import com.cwb.androiddevbr.cidadaodebem.ui.base.BaseFragmentActivity
+import com.google.android.material.bottomappbar.BottomAppBar
 import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -36,8 +36,11 @@ class MainActivity : BaseFragmentActivity() {
 
     }
 
-    override fun onSupportNavigateUp()
-            = findNavController(R.id.my_nav_host_fragment).navigateUp()
+    fun getBottomBar() : BottomAppBar{
+        return bar;
+    }
+
+    override fun onSupportNavigateUp() = findNavController(R.id.my_nav_host_fragment).navigateUp()
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         val inflater = menuInflater

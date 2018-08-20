@@ -3,6 +3,7 @@ package com.cwb.androiddevbr.cidadaodebem.app
 import android.content.Context
 import com.cwb.androiddevbr.cidadaodebem.ui.base.BaseViewModel
 import com.cwb.androiddevbr.cidadaodebem.ui.group.GroupListViewModel
+import com.cwb.androiddevbr.cidadaodebem.ui.group.detail.GroupDetailViewModel
 import com.cwb.androiddevbr.cidadaodebem.ui.main.LoginViewModel
 import com.cwb.androiddevbr.cidadaodebem.ui.main.MainViewModel
 import org.koin.androidx.viewmodel.ext.koin.viewModel
@@ -28,6 +29,7 @@ object AppInject {
         viewModel { MainViewModel() }
         viewModel { LoginViewModel() }
         viewModel { GroupListViewModel() }
+        viewModel { GroupDetailViewModel() }
     }
 
     private val repositoriesModule: Module = module {

@@ -6,9 +6,11 @@
     android:layout_width="match_parent"
     style="@style/ClickableCard"
     android:id="@+id/root"
-    android:layout_margin="8dp"
+    android:layout_marginTop="@dimen/spacing_micro"
+    android:layout_marginStart="@dimen/spacing_micro"
+    android:layout_marginEnd="@dimen/spacing_micro"
     android:layout_gravity="center"
-    android:layout_height="140dp">
+    android:layout_height="@dimen/group_card_size">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -35,12 +37,12 @@
             android:id="@+id/news_title_textview"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="12dp"
-            android:layout_marginStart="12dp"
-            android:paddingStart="8dp"
-            android:paddingEnd="8dp"
-            android:paddingTop="8dp"
-            android:paddingBottom="8dp"
+            android:layout_marginEnd="@dimen/spacing_normal_extra"
+            android:layout_marginStart="@dimen/spacing_normal_extra"
+            android:paddingStart="@dimen/spacing_normal"
+            android:paddingEnd="@dimen/spacing_normal"
+            android:paddingTop="@dimen/spacing_normal"
+            android:paddingBottom="@dimen/spacing_normal"
             style="@style/BoldTextViewWithShadow"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

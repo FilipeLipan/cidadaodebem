@@ -1,4 +1,4 @@
-package com.cwb.androiddevbr.cidadaodebem.ui.main
+package com.cwb.androiddevbr.cidadaodebem.ui.group
 
 import android.content.Context
 import android.view.View
